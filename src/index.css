@@ -1,13 +1,103 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --clr-purple: #7c5dfa;
+  --clr-heliotrope: #9277ff;
+  --clr-mirage: #1e2139;
+  --clr-ebony: #252945;
+  --clr-selago: #dfe3fa;
+  --clr-baliHai: #888eb0;
+  --clr-shipCove: #7e88c3;
+  --clr-vulcan: #0c0e16;
+  --clr-burntSienna: #ec5757;
+  --clr-monaLisa: #ff9797;
+  --clr-whisper: #f8f8fb;
+  --clr-offWhite: #f9fafe;
+  --clr-mirage2: #141625;
+  --clr-darkAccent: #494e6e;
+  --clr-orange: #ff8f00;
+  --clr-fadedOrange: rgba(255, 143, 0, 0.0571);
+  --clr-otherDark: #373b53;
+  --clr-tablet: 768px;
+  --clr-desktop: 1440px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img:not(.logo, .avatar, .sun) {
+  display: block;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+body {
+  background: var(--clr-mirage);
+}
+
+/* NAV */
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--clr-ebony);
+}
+.nav-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon-container {
+  padding: 1rem;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.nav-right .avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+.profile {
+  border-left: 1px solid var(--clr-offWhite);
+  padding: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile:hover .avatar {
+  border: 2px solid var(--clr-heliotrope);
+}
+@media screen and (min-width: 992px) {
+  .nav {
+    bottom: 0;
+    height: 100%;
+    width: 6rem;
+  }
+  .nav-center {
+    height: 100%;
+    flex-direction: column;
+  }
+  .nav-right {
+    flex-direction: column;
+    width: 100%;
+  }
+  .profile {
+    border-top: 1px solid var(--clr-offWhite);
+    border-left: none;
+    width: 100%;
+  }
 }
