@@ -3,7 +3,11 @@ import { reducer } from './reducer';
 
 const AppContext = React.createContext();
 
-const initialState = {};
+const initialState = {
+  invoices: [],
+  isLoading: false,
+  isError: { show: false, msg: '', status: '' },
+};
 
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
