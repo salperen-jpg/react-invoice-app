@@ -1,0 +1,59 @@
+.filter-form {
+  width: 90vw;
+  max-width: 50rem;
+  margin: 1rem auto;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-right {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.btn-icon-container img {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+.form-btn {
+  border: transparent;
+  border-radius: 20px;
+  background: var(--clr-purple);
+  padding: 0.4rem 0.79rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+.form-select {
+  background: transparent;
+  color: #fff;
+  padding: 0.2rem;
+  border: transparent;
+  outline: none;
+}
+.form-right option {
+  background: var(--clr-mirage);
+  border: transparent;
+  box-sizing: content-box;
+  display: inline-block;
+  outline: none;
+  appearance: none;
+  border: none;
+}
+.btn-icon-container {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Loading.css';
 
-const isLoading = () => {
+const Loading = () => {
   return (
     <div className='loading-container'>
       <div className='loading'></div>
@@ -9,4 +9,4 @@ const isLoading = () => {
   );
 };
 
-export default isLoading;
+export default Loading;

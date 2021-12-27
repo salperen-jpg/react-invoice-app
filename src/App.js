@@ -1,14 +1,17 @@
 import './App.css';
 import Sidebar from './Components/Sidebar';
 import Form from './Components/Form';
-import Loading from './Components/isLoading';
+import { useGlobalContext } from './context';
+import Title from './Components/Title';
+import Invoices from './Components/Invoices';
 
 function App() {
   return (
     <main>
+      <Title />
       <Sidebar />
       <Form />
-      <Loading />
+      <Invoices />
     </main>
   );
 }

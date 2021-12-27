@@ -1,0 +1,13 @@
+.section-title {
+  text-align: center;
+}
+
+.section-title h1 {
+  font-family: var(--secondary-font);
+  color: var(--clr-monaLisa);
+}
+.underline {
+  width: 10rem;
+  height: 0.25rem;
+  background: #fff;
+}

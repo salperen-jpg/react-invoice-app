@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shizuru&display=swap');
+
 :root {
   --clr-purple: #7c5dfa;
   --clr-heliotrope: #9277ff;
@@ -18,6 +20,8 @@
   --clr-otherDark: #373b53;
   --clr-tablet: 768px;
   --clr-desktop: 1440px;
+  --primary-font: 'Roboto', sans-serif;
+  --secondary-font: 'Shizuru', cursive;
 }
 
 *,
@@ -45,6 +49,11 @@ body {
 }
 /* main */
 main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* NAV */

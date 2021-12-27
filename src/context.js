@@ -1,17 +1,20 @@
-import React, { useContext, useReducer } from 'react';
+import React, { useContext, useReducer, useState } from 'react';
+import data from './data.json';
 import { reducer } from './reducer';
 
 const AppContext = React.createContext();
 
 const initialState = {
-  invoices: [],
+  invoices: [...data],
   isLoading: false,
-  isError: { show: false, msg: '', status: '' },
+  isAlert: { show: false, msg: '', status: '' },
 };
 
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  return <AppContext.Provider value='setup'>{children}</AppContext.Provider>;
+  return (
+    <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
+  );
 };
 
 //custom hook

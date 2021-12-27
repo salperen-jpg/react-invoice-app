@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from '../assets/logo.svg';
-import sun from '../assets/icon-sun.svg';
 import profile from '../assets/image-avatar.jpg';
 
 const Sidebar = () => {

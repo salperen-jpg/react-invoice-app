@@ -1,0 +1,12 @@
+.error {
+  text-align: center;
+}
+
+.success {
+  background: var(--color-btn-primary);
+  color: #fff;
+}
+.danger {
+  background: var(--color-btn-secondary);
+  color: #fff;
+}
