@@ -1,13 +1,15 @@
 import React from 'react';
 import './Form.css';
 import plus from '../assets/icon-plus.svg';
+import { useGlobalContext } from '../context';
 
 const Form = () => {
+  const { invoices } = useGlobalContext();
   return (
     <article className='filter-form'>
       <div>
         <h1>Invoices</h1>
-        <p>There are "length" total invoices</p>
+        <p>There are {invoices.length} total invoices</p>
       </div>
       <div className='form-right'>
         <select name='#' id='#' className='form-select'>

@@ -1,0 +1,91 @@
+.invoice {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #252945;
+  border-radius: 15px;
+  border: 1px solid transparent;
+  display: flex;
+  color: #fff;
+  justify-content: space-between;
+  transition: all 0.2s linear;
+}
+.invoice:hover {
+  border-color: var(--clr-purple);
+}
+.invoice-left .tag {
+  font-size: 0.9rem;
+}
+.invoice-left span {
+  color: #888eb0;
+}
+.invoice-left h4 {
+  margin-bottom: 1rem;
+}
+.invoice-left .date {
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+  color: #dfe3fa;
+}
+.price {
+  font-size: 1.3rem;
+}
+.invoice-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.name {
+  flex: 1;
+  text-align: center;
+  font-weight: 300;
+  color: #dfe3fa;
+  font-size: 0.8rem;
+}
+.status {
+  text-transform: capitalize;
+  padding: 1rem;
+  border-radius: 10px;
+  background: rgba(255, 143, 0, 0.0571);
+  color: #ff8f00;
+  display: grid;
+  place-items: center;
+}
+.arrow-right {
+  display: none;
+}
+@media screen and (min-width: 900px) {
+  .invoice-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .invoice-left h4 {
+    margin-bottom: 0;
+  }
+  .invoice-left .date {
+    margin-bottom: 0;
+  }
+  .invoice-right {
+    flex: 1;
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .status {
+    flex: 1;
+    display: grid;
+    place-items: center;
+  }
+  .name {
+    flex: 2;
+    text-align: left;
+  }
+  .arrow-right {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

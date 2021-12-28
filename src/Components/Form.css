@@ -1,5 +1,5 @@
 .filter-form {
-  width: 90vw;
+  width: 80vw;
   max-width: 50rem;
   margin: 1rem auto;
   color: #fff;
@@ -9,7 +9,7 @@
 }
 
 .form-right {
-  padding: 2rem;
+  padding-left: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,6 +30,9 @@
   gap: 0.5rem;
   color: #fff;
   cursor: pointer;
+}
+.form-btn:hover {
+  background: #9277ff;
 }
 .form-select {
   background: transparent;

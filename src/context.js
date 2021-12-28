@@ -8,6 +8,7 @@ const initialState = {
   invoices: [...data],
   isLoading: false,
   isAlert: { show: false, msg: '', status: '' },
+  isModalOpen: false,
 };
 
 export const AppProvider = ({ children }) => {
