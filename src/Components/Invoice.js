@@ -24,7 +24,13 @@ const Invoice = ({
       </div>
       <div className='invoice-right'>
         <p className='name'>{clientName}</p>
-        <div className='status'>
+        <div
+          className={`${
+            status === 'paid'
+              ? 'status paid'
+              : `${status === 'pending' ? 'status pending' : 'status'}`
+          }`}
+        >
           <span className='circle'></span>
           <span>{status}</span>
         </div>

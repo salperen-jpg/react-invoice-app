@@ -4,6 +4,7 @@ import Form from './Components/Form';
 import { useGlobalContext } from './context';
 import Title from './Components/Title';
 import Invoices from './Components/Invoices';
+import Modal from './Components/Modal';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Sidebar />
       <Form />
       <Invoices />
+      <Modal />
     </main>
   );
 }

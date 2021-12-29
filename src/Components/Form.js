@@ -4,6 +4,7 @@ import plus from '../assets/icon-plus.svg';
 import { useGlobalContext } from '../context';
 
 const Form = () => {
+  const { isModalOpen, openModal } = useGlobalContext();
   const { invoices } = useGlobalContext();
   return (
     <article className='filter-form'>
@@ -17,7 +18,7 @@ const Form = () => {
           <option value='draft'>draft</option>
           <option value='paid'>paid</option>
         </select>
-        <button className='form-btn'>
+        <button className='form-btn' onClick={openModal}>
           <div className='btn-icon-container'>
             <img src={plus} alt='' />
           </div>

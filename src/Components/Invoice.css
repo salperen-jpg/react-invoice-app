@@ -41,18 +41,39 @@
   color: #dfe3fa;
   font-size: 0.8rem;
 }
+.circle {
+  width: 0.3rem;
+  height: 0.3rem;
+  background: #fff;
+  border-radius: 50%;
+}
 .status {
+  width: 85px;
+  height: 35px;
   text-transform: capitalize;
   padding: 1rem;
   border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  font-size: 0.7rem;
+}
+.pending {
   background: rgba(255, 143, 0, 0.0571);
   color: #ff8f00;
-  display: grid;
-  place-items: center;
 }
+.paid {
+  color: #006241;
+  background: #18bd86;
+}
+
 .arrow-right {
   display: none;
 }
+
 @media screen and (min-width: 900px) {
   .invoice-left {
     flex: 1;
@@ -73,11 +94,7 @@
     flex-direction: row;
     align-items: center;
   }
-  .status {
-    flex: 1;
-    display: grid;
-    place-items: center;
-  }
+
   .name {
     flex: 2;
     text-align: left;

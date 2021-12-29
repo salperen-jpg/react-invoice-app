@@ -1,6 +1,7 @@
 import React, { useContext, useReducer, useState } from 'react';
 import data from './data.json';
 import { reducer } from './reducer';
+import { CLOSE_MODAL, OPEN_MODAL } from './actions';
 
 const AppContext = React.createContext();
 
@@ -12,9 +13,17 @@ const initialState = {
 };
 
 export const AppProvider = ({ children }) => {
+  const closeModal = () => {
+    dispatch({ type: CLOSE_MODAL });
+  };
+  const openModal = () => {
+    dispatch({ type: OPEN_MODAL });
+  };
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
-    <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ ...state, openModal, closeModal }}>
+      {children}
+    </AppContext.Provider>
   );
 };
 

@@ -4,11 +4,10 @@ import { useGlobalContext } from '../context';
 import Invoice from './Invoice';
 const Invoices = () => {
   const { invoices } = useGlobalContext();
-
+  console.log(invoices[0]);
   return (
     <article className='invoices'>
       {invoices.map((invoice) => {
-        console.log(invoice);
         return <Invoice key={invoice.id} {...invoice} />;
       })}
     </article>

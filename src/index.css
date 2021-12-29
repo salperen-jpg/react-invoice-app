@@ -45,10 +45,22 @@ body {
   background: var(--clr-mirage);
   font-family: var(--primary-font);
 }
-/* main */
-/* main {
-  min-height: 100vh;
-} */
+
+.btn {
+  cursor: pointer;
+  border: transparent;
+  padding: 0.8rem 1.4rem;
+  border: transparent;
+  display: inline-block;
+  transition: all 0.3s linear;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.btn:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
 
 /* NAV */
 .nav {
