@@ -1,6 +1,7 @@
 import React from 'react';
 import './Invoice.css';
 import right from '../assets/icon-arrow-right.svg';
+import DateTime from './DateTime';
 
 const Invoice = ({
   id,
@@ -17,9 +18,12 @@ const Invoice = ({
     <article className='invoice'>
       <div className='invoice-left'>
         <h4 className='tag'>
-          <span>#</span>RT3080
+          <span>#</span>
+          {id}
         </h4>
-        <p className='date'>{paymentDue}</p>
+        <div className='date'>
+          <DateTime datetime={paymentDue} />
+        </div>
         <h2 className='price'>${total.toFixed(0)}</h2>
       </div>
       <div className='invoice-right'>

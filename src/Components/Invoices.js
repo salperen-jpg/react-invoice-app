@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Invoices.css';
 import { useGlobalContext } from '../context';
 import Invoice from './Invoice';
 const Invoices = () => {
-  const { invoices } = useGlobalContext();
-  console.log(invoices[0]);
+  const { filtered, firstRender } = useGlobalContext();
+  useEffect(() => {
+    firstRender();
+  }, []);
   return (
     <article className='invoices'>
-      {invoices.map((invoice) => {
+      {filtered.map((invoice) => {
         return <Invoice key={invoice.id} {...invoice} />;
       })}
     </article>
