@@ -3,6 +3,8 @@ import {
   OPEN_MODAL,
   DISCARD_FORM,
   FILTER_BY_STATUS,
+  HANDLE_CHANGE,
+  HANDLE_SUBMIT,
 } from './actions';
 export const reducer = (state, action) => {
   switch (action.type) {
@@ -30,6 +32,16 @@ export const reducer = (state, action) => {
       return { ...state, filtered: filteredInvoices };
     case 'FIRST_RENDER':
       return { ...state, filtered: state.invoices };
+    case HANDLE_CHANGE:
+      const { name, value } = action.payload;
+      return {
+        ...state,
+        invoice: { ...state.invoice, [name]: value },
+      };
+    case HANDLE_SUBMIT:
+      console.log(action.payload);
+      return { ...state, filtered: [...state.invoices, action.payload] };
+
     default:
       return { ...state };
   }

@@ -4,6 +4,7 @@ import { useGlobalContext } from '../context';
 import Invoice from './Invoice';
 const Invoices = () => {
   const { filtered, firstRender } = useGlobalContext();
+
   useEffect(() => {
     firstRender();
   }, []);

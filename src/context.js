@@ -6,11 +6,29 @@ import {
   OPEN_MODAL,
   DISCARD_FORM,
   FILTER_BY_STATUS,
+  HANDLE_CHANGE,
+  HANDLE_SUBMIT,
 } from './actions';
 
 const AppContext = React.createContext();
 
 const initialState = {
+  invoice: {
+    clientEmail: '',
+    clientName: '',
+    createdAt: '',
+    description: '',
+    id: '',
+    paymentDue: '',
+    senderAddress: {
+      city: '',
+      country: '',
+      postCode: '',
+      street: '',
+    },
+    status: '',
+    total: '',
+  },
   invoices: [...data],
   isLoading: false,
   isAlert: { show: false, msg: '', status: '' },
@@ -37,6 +55,39 @@ export const AppProvider = ({ children }) => {
   const firstRender = () => {
     dispatch({ type: 'FIRST_RENDER' });
   };
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    dispatch({ type: HANDLE_CHANGE, payload: { name, value } });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const {
+      clientEmail,
+      clientName,
+      createdAt,
+      description,
+      id,
+      paymentDue,
+      senderAddress,
+      status,
+      total,
+    } = state.invoice;
+    if (
+      clientEmail &&
+      clientName &&
+      createdAt &&
+      description &&
+      paymentDue &&
+      senderAddress &&
+      total
+    ) {
+      dispatch({
+        type: HANDLE_SUBMIT,
+        payload: state.invoice,
+      });
+    }
+  };
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <AppContext.Provider
@@ -47,6 +98,8 @@ export const AppProvider = ({ children }) => {
         discardForm,
         filterByStatus,
         firstRender,
+        handleChange,
+        handleSubmit,
       }}
     >
       {children}

@@ -24,7 +24,7 @@ const Invoice = ({
         <div className='date'>
           <DateTime datetime={paymentDue} />
         </div>
-        <h2 className='price'>${total.toFixed(0)}</h2>
+        <h2 className='price'>${total}</h2>
       </div>
       <div className='invoice-right'>
         <p className='name'>{clientName}</p>
