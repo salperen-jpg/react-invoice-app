@@ -8,6 +8,8 @@ import {
   FILTER_BY_STATUS,
   HANDLE_CHANGE,
   HANDLE_SUBMIT,
+  FILL_FORM,
+  CLOSE_ALERT,
 } from './actions';
 
 const AppContext = React.createContext();
@@ -20,12 +22,10 @@ const initialState = {
     description: '',
     id: '',
     paymentDue: '',
-    senderAddress: {
-      city: '',
-      country: '',
-      postCode: '',
-      street: '',
-    },
+    city: '',
+    country: '',
+    postCode: '',
+    street: '',
     status: '',
     total: '',
   },
@@ -69,7 +69,7 @@ export const AppProvider = ({ children }) => {
       description,
       id,
       paymentDue,
-      senderAddress,
+      street,
       status,
       total,
     } = state.invoice;
@@ -79,14 +79,20 @@ export const AppProvider = ({ children }) => {
       createdAt &&
       description &&
       paymentDue &&
-      senderAddress &&
+      street &&
       total
     ) {
       dispatch({
         type: HANDLE_SUBMIT,
         payload: state.invoice,
       });
+    } else {
+      dispatch({ type: FILL_FORM });
     }
+  };
+
+  const closeAlert = () => {
+    dispatch({ type: CLOSE_ALERT });
   };
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
@@ -100,6 +106,7 @@ export const AppProvider = ({ children }) => {
         firstRender,
         handleChange,
         handleSubmit,
+        closeAlert,
       }}
     >
       {children}

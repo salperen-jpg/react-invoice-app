@@ -5,6 +5,8 @@ import {
   FILTER_BY_STATUS,
   HANDLE_CHANGE,
   HANDLE_SUBMIT,
+  FILL_FORM,
+  CLOSE_ALERT,
 } from './actions';
 export const reducer = (state, action) => {
   switch (action.type) {
@@ -40,7 +42,42 @@ export const reducer = (state, action) => {
       };
     case HANDLE_SUBMIT:
       console.log(action.payload);
-      return { ...state, filtered: [...state.invoices, action.payload] };
+      return {
+        ...state,
+        filtered: [...state.invoices, action.payload],
+        invoice: {
+          clientEmail: '',
+          clientName: '',
+          createdAt: '',
+          description: '',
+          id: '',
+          paymentDue: '',
+          city: '',
+          country: '',
+          postCode: '',
+          street: '',
+          status: '',
+          total: '',
+        },
+      };
+
+    case FILL_FORM:
+      return {
+        ...state,
+        isAlert: {
+          show: true,
+          msg: 'Please fill the required inputs',
+          status: 'danger',
+        },
+      };
+    case CLOSE_ALERT:
+      return {
+        ...state,
+        isAlert: {
+          ...state,
+          isAlert: { ...state.isAlert, show: false },
+        },
+      };
 
     default:
       return { ...state };

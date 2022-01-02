@@ -1,12 +1,14 @@
 .error {
+  padding: 0.5rem 0;
+  margin-top: 1rem;
   text-align: center;
 }
 
 .success {
-  background: var(--color-btn-primary);
+  background: #006241;
   color: #fff;
 }
 .danger {
-  background: var(--color-btn-secondary);
+  background: #d50032;
   color: #fff;
 }

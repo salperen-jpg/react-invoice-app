@@ -8,6 +8,7 @@ const Invoices = () => {
   useEffect(() => {
     firstRender();
   }, []);
+  console.log(filtered);
   return (
     <article className='invoices'>
       {filtered.map((invoice) => {

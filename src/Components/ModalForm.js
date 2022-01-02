@@ -1,8 +1,26 @@
 import React from 'react';
 import { useGlobalContext } from '../context';
+import Alert from './Alert';
 
 const ModalForm = () => {
-  const { discardForm, handleChange, handleSubmit } = useGlobalContext();
+  const { discardForm, handleChange, handleSubmit, invoice, isAlert } =
+    useGlobalContext();
+
+  const {
+    clientEmail,
+    clientName,
+    createdAt,
+    description,
+    id,
+    city,
+    country,
+    postCode,
+    street,
+    paymentDue,
+    status,
+    total,
+  } = invoice;
+
   return (
     <>
       <div className='form-container'>
@@ -12,7 +30,8 @@ const ModalForm = () => {
             <label htmlFor='streetAddress'>Street Address</label>
             <input
               type='text'
-              name='streetAddress'
+              name='street'
+              value={street}
               className='form-input'
               onChange={handleChange}
             />
@@ -22,6 +41,7 @@ const ModalForm = () => {
             <input
               type='text'
               name='country'
+              value={country}
               className='form-input'
               onChange={handleChange}
             />
@@ -29,6 +49,7 @@ const ModalForm = () => {
             <input
               type='text'
               name='city'
+              value={city}
               className='form-input'
               onChange={handleChange}
             />
@@ -36,6 +57,7 @@ const ModalForm = () => {
             <input
               type='text'
               name='postCode'
+              value={postCode}
               className='form-input'
               onChange={handleChange}
             />
@@ -46,6 +68,7 @@ const ModalForm = () => {
             <input
               type='text'
               name='clientName'
+              value={clientName}
               className='form-input'
               onChange={handleChange}
             />
@@ -55,6 +78,7 @@ const ModalForm = () => {
             <input
               type='text'
               name='clientEmail'
+              value={clientEmail}
               className='form-input'
               onChange={handleChange}
             />
@@ -65,6 +89,7 @@ const ModalForm = () => {
             <input
               type='text'
               name='description'
+              value={description}
               className='form-input'
               onChange={handleChange}
               required
@@ -75,6 +100,7 @@ const ModalForm = () => {
             <input
               type='date'
               name='createdAt'
+              value={createdAt}
               className='form-input'
               onChange={handleChange}
               required
@@ -83,8 +109,9 @@ const ModalForm = () => {
           <div className='form-elements'>
             <label htmlFor='paymentDue'>Payment due</label>
             <input
-              type='text'
+              type='date'
               name='paymentDue'
+              value={paymentDue}
               className='form-input'
               onChange={handleChange}
               required
@@ -95,6 +122,7 @@ const ModalForm = () => {
             <input
               type='number'
               name='total'
+              value={total}
               className='form-input'
               onChange={handleChange}
               required
@@ -116,6 +144,7 @@ const ModalForm = () => {
               save
             </button>
           </div>
+          {isAlert.show && <Alert />}
         </form>
       </div>
     </>
